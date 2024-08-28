@@ -63,7 +63,7 @@ medium-scaled/
 ├── .env
 ├── .gitignore
 ├── README.md
-├── requirements.txt
+└── requirements.txt
 ```
 
 ### Explanation of the Structure:
