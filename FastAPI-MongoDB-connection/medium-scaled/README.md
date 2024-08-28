@@ -1,5 +1,4 @@
-
-# Medium-Scale FastAPI and MongoDB Integration
+# Medium-Scaled FastAPI and MongoDB Integration
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -21,32 +20,48 @@ This guide will provide you with an overview of the folder structure, installati
 ## Folder Structure
 The medium-scale folder structure is organized as follows:
 
-```
-medium_scale_fastapi_mongodb/
-│
+```plaintext
+medium-scaled/
 ├── app/
-│   ├── __init__.py
-│   ├── main.py
+│   ├── auth/
+│   │   ├── __init__.py
+│   │   ├── authentication.py
+│   │   └── verification.py
+│   ├── config/
+│   │   ├── __init__.py
+│   │   └── settings.py
+│   ├── crud/
+│   │   ├── __init__.py
+│   │   └── user_crud.py
+│   ├── database/
+│   │   ├── __init__.py
+│   │   └── connection.py
 │   ├── models/
 │   │   ├── __init__.py
-│   │   └── your_model.py
+│   │   ├── admin_model.py
+│   │   └── user_model.py
 │   ├── routes/
 │   │   ├── __init__.py
-│   │   └── your_routes.py
+│   │   ├── admin_route.py
+│   │   └── user_route.py
+│   ├── schemas/
+│   │   ├── __init__.py
+│   │   ├── admin_schema.py
+│   │   └── user_schema.py
 │   ├── services/
 │   │   ├── __init__.py
-│   │   └── your_services.py
+│   │   ├── email_services.py
+│   │   └── message_services.py
 │   └── utils/
 │       ├── __init__.py
-│       └── your_utilities.py
-│
+│       └── helpers.py
 ├── tests/
 │   ├── __init__.py
-│   └── test_your_feature.py
-│
-├── requirements.txt
-├── .env
-└── README.md
+│   ├── test_main.py
+│   ├── test_routes.py
+│   └── test_users.py
+├── main.py
+└── .env
 ```
 
 ### Explanation of the Structure:
@@ -67,7 +82,7 @@ medium_scale_fastapi_mongodb/
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/yourrepository.git
-   cd yourrepository/medium_scale_fastapi_mongodb
+   cd yourrepository/medium-scaled
    ```
 
 2. Install the required packages:
@@ -80,9 +95,9 @@ medium_scale_fastapi_mongodb/
 ## Usage
 To run the FastAPI application, execute:
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
-Access the application at `http://127.0.0.1:8000`.
+Access the application at `http://127.0.0.1:8000`. 
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a pull request for any improvements.
