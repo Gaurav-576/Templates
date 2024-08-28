@@ -60,23 +60,73 @@ medium-scaled/
 │   ├── test_main.py
 │   ├── test_routes.py
 │   └── test_users.py
-├── main.py
-└── .env
+├── .env
+├── .gitignore
+├── README.md
+├── requirements.txt
+└── main.py
 ```
 
 ### Explanation of the Structure:
-- `app/`: Contains the core application code.
-  - `main.py`: The entry point for the FastAPI application.
-  - `models/`: Directory for database models.
-  - `routes/`: Directory for API route definitions.
-  - `services/`: Contains business logic and service functions.
-  - `utils/`: Utility functions and helpers.
+
+- **`app/`**: Contains the core application code and modules for the FastAPI project.
+  - **`main.py`**: The entry point for the FastAPI application. This file typically includes the FastAPI instance creation, middleware, and includes the route definitions.
   
-- `tests/`: Contains unit and integration tests for your application.
+  - **`auth/`**: Responsible for user authentication and verification functionalities.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`authentication.py`**: Contains functions and classes for user authentication, such as login and token generation.
+    - **`verification.py`**: Includes methods for verifying user credentials and account status.
 
-- `requirements.txt`: Lists the required packages for the project.
+  - **`config/`**: Holds configuration settings for the application.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`settings.py`**: Contains application settings such as database connection strings, environment variables, and any other configuration options.
 
-- `.env`: Environment variables for configuration (e.g., database URL).
+  - **`crud/`**: Contains functions for creating, reading, updating, and deleting records from the database.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`user_crud.py`**: Includes functions specifically related to user data management, such as creating new users, retrieving user information, and updating user profiles.
+
+  - **`database/`**: Manages database connections and sessions.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`connection.py`**: Responsible for establishing and managing the connection to the database, including any ORM setup if needed.
+
+  - **`models/`**: Defines the data models that represent the application's data structure.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`admin_model.py`**: Contains the model definitions for admin users, including attributes and methods specific to admin functionalities.
+    - **`user_model.py`**: Contains the model definitions for regular users, including attributes and methods related to user data.
+
+  - **`routes/`**: Defines the API routes for handling client requests.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`admin_route.py`**: Contains the route definitions related to admin functionalities, such as user management and admin-specific actions.
+    - **`user_route.py`**: Contains the route definitions for user-related actions, such as registration, login, and profile management.
+
+  - **`schemas/`**: Contains Pydantic models for data validation and serialization.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`admin_schema.py`**: Defines the data validation schema for admin users, including the expected input and output formats.
+    - **`user_schema.py`**: Defines the data validation schema for regular users, ensuring that the data conforms to expected formats.
+
+  - **`services/`**: Contains business logic and service functions that interact with the application’s data and models.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`email_services.py`**: Includes functions for sending emails, such as welcome emails or password reset instructions.
+    - **`message_services.py`**: Contains functions for sending notifications or messages within the application.
+
+  - **`utils/`**: Utility functions and helpers that can be used throughout the application.
+    - **`__init__.py`**: Indicates that this directory is a Python package.
+    - **`helpers.py`**: Contains reusable helper functions that can assist in various tasks across the application.
+
+- **`tests/`**: Contains unit and integration tests for the application.
+  - **`__init__.py`**: Indicates that this directory is a Python package.
+  - **`test_main.py`**: Includes tests for the main application functionality and setup.
+  - **`test_routes.py`**: Contains tests for the API routes to ensure they behave as expected.
+  - **`test_users.py`**: Includes tests specifically for user-related functionalities, such as CRUD operations.
+
+- **`.env`**: A file for environment variables used in the application, such as sensitive information and configuration settings.
+
+- **`.gitignore`**: Specifies files and directories that should be ignored by Git, ensuring sensitive data and unnecessary files are not tracked.
+
+- **`README.md`**: A markdown file that provides an overview of the project, including installation instructions, usage guidelines, and any other relevant information.
+
+- **`requirements.txt`**: A text file listing the required Python packages and their versions for the project, allowing for easy installation using pip.
+
 
 ## Installation
 1. Clone the repository:
