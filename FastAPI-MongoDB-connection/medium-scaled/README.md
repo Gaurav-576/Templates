@@ -64,7 +64,6 @@ medium-scaled/
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
-└── main.py
 ```
 
 ### Explanation of the Structure:
