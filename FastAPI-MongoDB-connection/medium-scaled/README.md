@@ -1,5 +1,5 @@
 
-# Medium-Scale FastAPI and MongoDB Integration
+# FastAPI and MongoDB Integration for a Medium-Scaled Application
 
 ## Table of Contents
 1. [Introduction](#introduction)
